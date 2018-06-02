@@ -7,6 +7,7 @@ import {
   Text,
   TouchableOpacity,
   View,
+  Picker,
 } from 'react-native';
 import { WebBrowser } from 'expo';
 
@@ -15,6 +16,11 @@ import { MonoText } from '../components/StyledText';
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
     header: null,
+  };
+
+  constructor(props) {
+    super(props);
+    this.state = {language: ''};
   };
 
   render() {
@@ -51,6 +57,16 @@ export default class HomeScreen extends React.Component {
               <Text style={styles.helpLinkText}>Help, it didn’t automatically reload!</Text>
             </TouchableOpacity>
           </View>
+
+
+          <Text>Selected: {this.state.language}</Text>
+          <Picker
+            selectedValue={this.state.language}
+            style={{ height: 50, width: 100 }}
+            onValueChange={(itemValue, itemIndex) => this.setState({language: itemValue})}>
+            <Picker.Item label="Java" value="java" />
+            <Picker.Item label="JavaScript" value="js" />
+          </Picker>
         </ScrollView>
 
         <View style={styles.tabBarInfoContainer}>
