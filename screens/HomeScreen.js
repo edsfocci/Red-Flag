@@ -63,10 +63,10 @@ export default class HomeScreen extends React.Component {
           <Picker
             selectedValue={this.state.redFlags}
             style={{ height: 50, flex: 1, flexDirection: 'row' }}
-            onValueChange={(itemValue, itemIndex) => this.setState({redFlags: itemValue})}>
-            <Picker.Item label="Appearance" value="Appearance" />
-            <Picker.Item label="Actions" value="Actions" />
-            <Picker.Item label="Language" value="Language" />
+            onValueChange={(itemValue, itemIndex) => this.setState({redFlags: redFlagsMap[itemValue]})}>
+            <Picker.Item label="Appearance" value="appearance" />
+            <Picker.Item label="Actions" value="actions" />
+            <Picker.Item label="Language" value="language" />
           </Picker>
         </ScrollView>
 
@@ -113,6 +113,12 @@ export default class HomeScreen extends React.Component {
       'https://docs.expo.io/versions/latest/guides/up-and-running.html#can-t-see-your-changes'
     );
   };
+}
+
+const redFlagsMap = {
+  'appearance': 'Appearance',
+  'actions': 'Actions',
+  'language': 'Language',
 }
 
 const styles = StyleSheet.create({
