@@ -20,7 +20,7 @@ export default class HomeScreen extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {language: ''};
+    this.state = {redFlags: ''};
   };
 
   render() {
@@ -59,13 +59,14 @@ export default class HomeScreen extends React.Component {
           </View>
 
 
-          <Text>Selected: {this.state.language}</Text>
+          <Text>Red flags selected: {this.state.redFlags}</Text>
           <Picker
-            selectedValue={this.state.language}
-            style={{ height: 50, width: 100 }}
-            onValueChange={(itemValue, itemIndex) => this.setState({language: itemValue})}>
-            <Picker.Item label="Java" value="java" />
-            <Picker.Item label="JavaScript" value="js" />
+            selectedValue={this.state.redFlags}
+            style={{ height: 50, flex: 1, flexDirection: 'row' }}
+            onValueChange={(itemValue, itemIndex) => this.setState({redFlags: itemValue})}>
+            <Picker.Item label="Appearance" value="Appearance" />
+            <Picker.Item label="Actions" value="Actions" />
+            <Picker.Item label="Language" value="Language" />
           </Picker>
         </ScrollView>
 
