@@ -37,11 +37,11 @@ export default class ReportScreen extends React.Component {
     return (
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-          <View style={styles.submissionCheck}>
-            <Text>
-              Submission Check
-            </Text>
+          <Text>
+            Submission Check
+          </Text>
 
+          <View style={styles.checkboxContainer}>
             <CheckBox
               title='Visible injuries: bruising, swelling, welts'
               checked={this.state.checked1}
@@ -68,17 +68,14 @@ export default class ReportScreen extends React.Component {
               onPress={() => this.setState({checked5: !this.state.checked5})}
             />
             <CheckBox
-              title='Child or teen with unrelated older person'
-              checked={this.state.checked5}
-              onPress={() => this.setState({checked5: !this.state.checked5})}
-            />
-            <CheckBox
               title='Other:'
               checked={this.state.checkedOther}
-              onPress={() => this.setState({checked5: !this.state.checkedOther})}
+              onPress={() => this.setState({checkedOther: !this.state.checkedOther})}
             />
-            <TextInput
-            />
+          </View>
+          <TextInput
+          />
+          <View style={styles.submitContainer}>
             <Button
               title="Submit"
               onPress={() => this.props.navigation.navigate('Home')}
@@ -98,7 +95,10 @@ const styles = StyleSheet.create({
   contentContainer: {
     paddingTop: 30,
   },
-  submissionCheck: {
-    alignItems: 'center',
+  checkboxContainer: {
+    alignItems: 'stretch',
   },
+  submitContainer: {
+    alignItems: 'center',
+  }
 });
