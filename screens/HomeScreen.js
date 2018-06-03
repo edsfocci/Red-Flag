@@ -68,14 +68,12 @@ const styles = StyleSheet.create({
   containerProper: {
     alignItems: 'center',
     position: 'relative',
-    justifyContent: 'center',
   },
   homeContainer: {
     alignItems: 'center',
   },
   buttonContainer: {
     alignItems: 'center',
-    flex: 1,
     position: 'relative',
     top: 150,
   },
