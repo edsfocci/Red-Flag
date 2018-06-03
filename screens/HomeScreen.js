@@ -36,7 +36,7 @@ export default class HomeScreen extends React.Component {
               <Text>Report potentially abusive situations.</Text>
             </View>
 
-            <View style={styles.homeContainer}>
+            <View style={styles.buttonContainer}>
               <Text>Is anyone in immediate danger?</Text>
               <Button onPress={onPressCallPolice} title="YES - Call 911" color="red" accessibilityLabel="Red button that anonymously sends location data to the police."/>
               <Button onPress={() =>
@@ -67,9 +67,17 @@ const styles = StyleSheet.create({
   },
   containerProper: {
     alignItems: 'center',
+    position: 'relative',
+    justifyContent: 'center',
   },
   homeContainer: {
     alignItems: 'center',
+  },
+  buttonContainer: {
+    alignItems: 'center',
+    flex: 1,
+    position: 'relative',
+    top: 150,
   },
 
   logo:{
