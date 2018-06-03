@@ -5,7 +5,7 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/Awareness';
+import Awareness from '../screens/Awareness';
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
@@ -26,25 +26,15 @@ HomeStack.navigationOptions = {
 };
 
 const AwarenessStack = createStackNavigator({
-  Links: AwarenessScreen,
+  Awareness: Awareness,
 });
 
-LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
+AwarenessStack.navigationOptions = {
+  tabBarLabel: 'Awareness',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
       name={Platform.OS === 'ios' ? `ios-link${focused ? '' : '-outline'}` : 'md-link'}
-    />
-  ),
-};
-
-SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={Platform.OS === 'ios' ? `ios-options${focused ? '' : '-outline'}` : 'md-options'}
     />
   ),
 };
