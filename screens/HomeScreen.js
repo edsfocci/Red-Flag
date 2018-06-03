@@ -26,7 +26,7 @@ export default class HomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <ScrollView style={styles.container}>
+        <ScrollView style={styles.scrollContainer}>
 
           <View style={styles.homeContainer}>
             <Text style={styles.logo}>Red Flag</Text>
@@ -42,6 +42,10 @@ export default class HomeScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     marginTop: 20,
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+  scrollContainer: {
     flex: 1,
     backgroundColor: '#fff',
   },
