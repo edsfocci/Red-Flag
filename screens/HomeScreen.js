@@ -28,31 +28,11 @@ export default class HomeScreen extends React.Component {
       <View style={styles.container}>
         <ScrollView style={styles.container}>
 
-          </View>
-
           <View style={styles.homeContainer}>
-            {this._maybeRenderDevelopmentModeWarning()}
-
             <Text style={styles.logo}>Red Flag</Text>
             <Text>Report potentially abusive situations.</Text>
           </View>
 
-          // <View style={styles.helpContainer}>
-          //   <TouchableOpacity onPress={this._handleHelpPress} style={styles.helpLink}>
-          //     <Text style={styles.helpLinkText}>Help, it didn’t automatically reload!</Text>
-          //   </TouchableOpacity>
-          // </View>
-
-
-          // <Text>Red flags selected: {this.state.redFlags}</Text>
-          // <Picker
-          //   selectedValue={this.state.redFlags}
-          //   style={{ height: 50, flex: 1, flexDirection: 'row' }}
-          //   onValueChange={(itemValue, itemIndex) => this.setState({redFlags: itemValue})}>
-          //   <Picker.Item label="Appearance" value="Appearance" />
-          //   <Picker.Item label="Actions" value="Actions" />
-          //   <Picker.Item label="Language" value="Language" />
-          // </Picker>
         </ScrollView>
 
         <View style={styles.tabBarInfoContainer}>
@@ -108,8 +88,9 @@ const styles = StyleSheet.create({
   homeContainer: {
 
   },
-  logo{
-
+  logo:{
+    color: 'red',
+    fontSize: 24
   },
 
 });
