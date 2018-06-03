@@ -30,7 +30,7 @@ export default class HomeScreen extends React.Component {
         <ScrollView style={styles.scrollContainer}>
 
           <View style={styles.homeContainer}>
-            <Text style={styles.logo}>Red Flag</Text>
+            <Text style={styles.logo}>RedFlag</Text>
             <Text>Report potentially abusive situations.</Text>
           </View>
 
@@ -65,14 +65,12 @@ const styles = StyleSheet.create({
   },
   homeContainer: {
   },
+
   logo:{
     color: 'red',
     fontSize: 28,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-
   },
+
   // policeBtn:{
   //   color: 'red'
   // },
