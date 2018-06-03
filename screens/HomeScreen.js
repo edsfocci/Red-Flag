@@ -25,32 +25,34 @@ export default class HomeScreen extends React.Component {
   };
 
   render() {
+    const { navigate } = this.props.navigation;
+
     return (
       <View style={styles.container}>
         <ScrollView style={styles.scrollContainer}>
+          <View style={styles.containerProper}>
+            <View style={styles.homeContainer}>
+              <Text style={styles.logo}>RedFlag</Text>
+              <Text>Report potentially abusive situations.</Text>
+            </View>
 
-          <View style={styles.homeContainer}>
-            <Text style={styles.logo}>RedFlag</Text>
-            <Text>Report potentially abusive situations.</Text>
+            <View style={styles.homeContainer}>
+              <Text>Is anyone in immediate danger?</Text>
+              <Button onPress={onPressCallPolice} title="YES - Call 911" color="red" accessibilityLabel="Red button that anonymously sends location data to the police."/>
+              <Button onPress={() =>
+            navigate('Report')} title="NO - File Report" color="blue" accessibilityLabel="Blue button that opens a form to report possible abusive situations to anti-trafficking "/>
+            </View>
           </View>
-
-          <View style={styles.homeContainer}>
-            <Text>Is anyone in immediate danger?</Text>
-            <Button onPress={onPressCallPolice} title="YES - Call 911" color="red" accessibilityLabel="Red button that anonymously sends location data to the police."/>
-            <Button onPress={onPressFileReport} title="NO - File Report" color="blue" accessibilityLabel="Blue button that opens a form to report possible abusive situations to anti-trafficking "/>
-          </View>
-
         </ScrollView>
       </View>
     );
   }
 }
 onPressCallPolice = () =>{
-
 };
-onPressFileReport = () =>{
-
-};
+// onPressFileReport = () =>{
+//   navigate('ReportScreen')
+// };
 
 
 const styles = StyleSheet.create({
@@ -63,7 +65,11 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
   },
+  containerProper: {
+    alignItems: 'center',
+  },
   homeContainer: {
+    alignItems: 'center',
   },
 
   logo:{
