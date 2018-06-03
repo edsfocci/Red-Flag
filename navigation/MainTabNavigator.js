@@ -5,11 +5,16 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
+import ReportScreen from '../screens/ReportScreen';
 import Awareness from '../screens/Awareness';
 
 const HomeStack = createStackNavigator({
-  Home: HomeScreen,
-});
+    Home: HomeScreen,
+    Report: ReportScreen,
+  }, {
+    initialRouteName: 'Home',
+  }
+);
 
 HomeStack.navigationOptions = {
   tabBarLabel: 'Home',
