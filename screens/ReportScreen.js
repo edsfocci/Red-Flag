@@ -73,8 +73,10 @@ export default class ReportScreen extends React.Component {
               onPress={() => this.setState({checkedOther: !this.state.checkedOther})}
             />
           </View>
-          <TextInput
-          />
+          <View style={styles.textInputContainer}>
+            <TextInput
+            />
+          </View>
           <View style={styles.submitContainer}>
             <Button
               title="Submit"
@@ -98,7 +100,10 @@ const styles = StyleSheet.create({
   checkboxContainer: {
     alignItems: 'stretch',
   },
+  textInputContainer: {
+    backgroundColor: '#aaa',
+  },
   submitContainer: {
     alignItems: 'center',
-  }
+  },
 });
