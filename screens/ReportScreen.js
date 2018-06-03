@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 import { WebBrowser } from 'expo';
 import { CheckBox } from 'react-native-elements';
+import { email } from 'react-native-communications';
 
 import { MonoText } from '../components/StyledText';
 
@@ -78,13 +79,17 @@ export default class ReportScreen extends React.Component {
           <View style={styles.submitContainer}>
             <Button style={styles.button}
               title="Submit"
-              onPress={() => this.props.navigation.navigate('Home')}
+              onPress={() => email('rcheyenne.truss@gmail.com', null, null, 'Submission', 'In production, this email will be sent to various agencies against human trafficking')}
             />
           </View>
         </ScrollView>
       </View>
     );
   }
+
+  // this.onPress = () => {
+  //   email('rcheyenne.truss@gmail.com', null, null, 'Submission', 'Gurgle')
+  // }
 }
 
 const styles = StyleSheet.create({
