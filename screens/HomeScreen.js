@@ -80,6 +80,12 @@ export default class HomeScreen extends React.Component {
   };
 }
 
+const redFlagsMap = {
+  'appearance': 'Appearance',
+  'actions': 'Actions',
+  'language': 'Language',
+}
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
